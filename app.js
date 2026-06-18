@@ -4103,7 +4103,7 @@ function initManualDownloader() {
 
                     detailedFormula = "\\text{OEE} = \\text{Availability} \\times \\text{Performance} \\times \\text{Quality}";
 
-                    detailedVars = "\\text{Availability} = \\frac{\\text{Run Time}}{\\text{Planned Time}}, \\text{Performance} = \\frac{\\text{Ideal Cycle Time} \\times \\Parts}{\\text{Run Time}}, \\text{Quality} = \\frac{\\text{Good Parts}}{\\text{Total Parts}}.";
+                    detailedVars = "\\text{Availability} = \\frac{\\text{Run Time}}{\\text{Planned Time}}, \\text{Performance} = \\frac{\\text{Ideal Cycle Time} \\times \\text{Parts}}{\\text{Run Time}}, \\text{Quality} = \\frac{\\text{Good Parts}}{\\text{Total Parts}}.";
 
                     leanTools = "OEE log sheets \\(\\rightarrow\\) Six Big Losses auditing \\(\\rightarrow\\) TPM Autonomous Maintenance.";
 
