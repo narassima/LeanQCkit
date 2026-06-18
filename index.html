@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7 QC Tools &amp; COPQ Diagnostic Suite — Lean Business Excellence</title>
+    <title>QFD House of Quality (HoQ) Excellence Engine</title>
     <!-- Google Fonts: Inter and Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Chart.js CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- html2pdf.js CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <!-- KaTeX for LaTeX Math Rendering -->
@@ -25,93 +23,89 @@
         <!-- Header -->
         <header class="app-header">
             <div class="header-logo">
-                <i class="fa-solid fa-industry"></i>
+                <i class="fa-solid fa-hotel"></i>
                 <div class="logo-text">
-                    <h1>7 QC Tools &amp; COPQ Diagnostic Suite</h1>
-                    <span>Business Excellence for Competitive Advantage</span>
+                    <h1>QFD House of Quality Suite</h1>
+                    <span>Dynamic Engineering &amp; Strategic Alignment Engine</span>
                 </div>
             </div>
             <div class="header-actions">
                 <button id="load-template-btn" class="btn btn-secondary">
-                    <i class="fa-solid fa-book-open"></i> Load Apex Electro-Tech Case
-                </button>
-                <button id="clear-workspace-btn" class="btn btn-secondary" style="color: var(--danger);">
-                    <i class="fa-solid fa-trash-can"></i> Reset
+                    <i class="fa-solid fa-book-open"></i> Load Default Case (Smart IoT Lock)
                 </button>
                 <button id="manual-download-btn" class="btn btn-success">
-                    <i class="fa-solid fa-file-pdf"></i> Practitioner Manual
+                    <i class="fa-solid fa-file-pdf"></i> QFD Manual
                 </button>
                 <button id="pdf-export-btn" class="btn btn-primary">
-                    <i class="fa-solid fa-download"></i> Results
+                    <i class="fa-solid fa-download"></i> Export Matrix PDF
                 </button>
             </div>
         </header>
-
 
         <!-- Main Workspace -->
         <div class="app-workspace">
             <!-- Sidebar: Sequenced Step Pipeline -->
             <aside class="app-sidebar">
-                <div class="pipeline-heading">Diagnostic Pipeline</div>
+                <div class="pipeline-heading">QFD Pipeline</div>
                 <nav class="pipeline-nav">
                     <a href="#welcome" class="nav-step active" data-step="welcome">
                         <span class="step-num">0</span>
-                        <span class="step-label">Symptom Selector &amp; COPQ</span>
+                        <span class="step-label">Select Workspace Mode</span>
                         <i class="fa-solid fa-chevron-right step-chevron"></i>
                     </a>
                     <a href="#step1" class="nav-step" data-step="1">
                         <span class="step-num">1</span>
-                        <span class="step-label">Check Sheet</span>
-                        <span class="step-tag">Collect</span>
+                        <span class="step-label">Customer Needs (WHATs)</span>
+                        <span class="step-tag">Demand</span>
                         <i class="fa-solid fa-chevron-right step-chevron"></i>
                     </a>
                     <a href="#step2" class="nav-step" data-step="2">
                         <span class="step-num">2</span>
-                        <span class="step-label">Pareto Chart</span>
-                        <span class="step-tag">Prioritise</span>
+                        <span class="step-label">Design Spec (HOWs)</span>
+                        <span class="step-tag">Engineering</span>
                         <i class="fa-solid fa-chevron-right step-chevron"></i>
                     </a>
                     <a href="#step3" class="nav-step" data-step="3">
                         <span class="step-num">3</span>
-                        <span class="step-label">Fishbone &amp; 5-Why</span>
-                        <span class="step-tag">Diagnose</span>
+                        <span class="step-label">Relationship Matrix</span>
+                        <span class="step-tag">Coefficients</span>
                         <i class="fa-solid fa-chevron-right step-chevron"></i>
                     </a>
                     <a href="#step4" class="nav-step" data-step="4">
                         <span class="step-num">4</span>
-                        <span class="step-label">Histogram (Cp/Cpk)</span>
-                        <span class="step-tag">Capability</span>
+                        <span class="step-label">Correlation Roof</span>
+                        <span class="step-tag">Interactions</span>
                         <i class="fa-solid fa-chevron-right step-chevron"></i>
                     </a>
                     <a href="#step5" class="nav-step" data-step="5">
                         <span class="step-num">5</span>
-                        <span class="step-label">Scatter Diagram</span>
-                        <span class="step-tag">Correlation</span>
+                        <span class="step-label">Market Benchmarking</span>
+                        <span class="step-tag">Competitive</span>
                         <i class="fa-solid fa-chevron-right step-chevron"></i>
                     </a>
                     <a href="#step6" class="nav-step" data-step="6">
                         <span class="step-num">6</span>
-                        <span class="step-label">SPC Control Chart</span>
-                        <span class="step-tag">Stability</span>
+                        <span class="step-label">Technical Targets</span>
+                        <span class="step-tag">Targets</span>
                         <i class="fa-solid fa-chevron-right step-chevron"></i>
                     </a>
-                    <a href="#step7" class="nav-step" data-step="7">
+                    <a href="#matrix-view" class="nav-step" data-step="matrix-view">
                         <span class="step-num">7</span>
-                        <span class="step-label">Flowchart Mapping</span>
-                        <span class="step-tag">Stratify</span>
+                        <span class="step-label">Visual House of Quality</span>
+                        <span class="step-tag">The House</span>
                         <i class="fa-solid fa-chevron-right step-chevron"></i>
                     </a>
-                    <a href="#kb" class="nav-step" data-step="kb">
+                    <a href="#advisor" class="nav-step" data-step="advisor">
                         <span class="step-num">8</span>
-                        <span class="step-label">Lean Decision Engine</span>
+                        <span class="step-label">QFD Decision Advisor</span>
                         <span class="step-tag">RAG KB</span>
                         <i class="fa-solid fa-chevron-right step-chevron"></i>
                     </a>
                 </nav>
 
                 <div class="sidebar-info-card">
-                    <div class="card-title"><i class="fa-solid fa-compass"></i> Practitioner Guideline</div>
-                    <p>Observe symptom → Quantify loss (COPQ) → Map data (Check Sheet) → Prioritize (Pareto) → Uncover causes (Fishbone &amp; 5-Why) → Check capability (Histogram) → Find correlation (Scatter) → Ensure control (SPC) → Prevent at source (Poka-Yoke / Flowchart).</p>
+                    <div class="card-title"><i class="fa-solid fa-compass"></i> QFD Process Guide</div>
+                    <p>Map voice of customer (WHATs) → Define specs (HOWs) → Connect inputs (Weights) → Identify tradeoffs (Roof) → Compare specs (Targets) → Formulate strategic design plan.</p>
                 </div>
             </aside>
 
@@ -120,885 +114,282 @@
                 <!-- Collapsible Case Study Guide Panel -->
                 <div class="case-study-guide-panel" id="case-study-guide">
                     <div class="guide-header" onclick="toggleCaseGuide()">
-                        <h3><i class="fa-solid fa-book"></i> Default Case Study Guide: Apex Electro-Tech</h3>
+                        <h3><i class="fa-solid fa-book"></i> Default Case Study Guide: Smart IoT Lock</h3>
                         <i class="fa-solid fa-chevron-down" id="guide-chevron"></i>
                     </div>
-                    <div class="guide-body" id="guide-body-content">
-                        <p><strong>Context:</strong> Apex Electro-Tech produces smart IoT hubs. Due to rising customer complaints and internal rework loops, profitability has declined. Follow the guided sequence below to see how each tool is used:</p>
+                    <div class="guide-body collapsed" id="guide-body-content">
+                        <p><strong>Context:</strong> SecuTech is building a premium Smart IoT Lock. Key customer requirements are centered around reliability, battery lifespan, ease of installation, and mobile synchronization. The QFD helps align these WHATs to key design specifications (HOWs).</p>
                         <div class="step-by-step-guide">
                             <div class="guide-step">
-                                <strong>Step 0 (Symptom &amp; COPQ):</strong> Apex selects *High defects*. They analyze their COPQ (Revenue: ₹100 Cr). Visible External Failures are ₹4.2 Cr, while hidden Internal Failures reach ₹6.8 Cr. Appraisal costs are ₹2.5 Cr and Prevention is ₹0.8 Cr.
+                                <strong>Step 1 (WHATs):</strong> Input customer voices like <em>"Long battery life"</em> (Importance: 5) and <em>"Instant mobile sync"</em> (Importance: 4).
                             </div>
                             <div class="guide-step">
-                                <strong>Step 1 (Check Sheet):</strong> The team logs counts for 5 main defects over 4 process stations. <em>"Solder Joint Fracture"</em> is logged with 65 total occurrences, the highest on the list.
+                                <strong>Step 2 (HOWs):</strong> Map engineering design metrics like <em>"Standby current draw"</em> (mA), <em>"Bluetooth chip TX power"</em> (dBm), and <em>"Enclosure sealing level"</em> (IP rating).
                             </div>
                             <div class="guide-step">
-                                <strong>Step 2 (Pareto):</strong> The compiled Check Sheet is sorted. Solder Fractures represent 40.9% of defects. The "Vital Few" cutoff points to Solder Joint Fracture, Calibration Drift, and Enclosure Scratch (accounting for 81.1% of total errors).
+                                <strong>Step 3 (Relationships):</strong> Strong mapping (9) is established between <em>"Long battery life"</em> and <em>"Standby current draw"</em>.
                             </div>
                             <div class="guide-step">
-                                <strong>Step 3 (Fishbone &amp; 5-Why):</strong> Focus is set to *Solder Joint Fracture*. A 5-Why trace reveals reflow oven zones are shifting due to an unstandardized thermocouple calibration schedule.
+                                <strong>Step 4 (Roof Correlation):</strong> Conflict is highlighted between <em>"Bluetooth chip TX power"</em> (wants high power for signal) and <em>"Standby current draw"</em> (wants low power for battery) - marked as a strong negative (--) trade-off.
                             </div>
                             <div class="guide-step">
-                                <strong>Step 4 (Histogram):</strong> Peak reflow oven temperature is measured. LSL is 235°C, USL is 245°C. With a Mean of 238.4°C and Std Dev of 1.48°C, the process is found **Not Capable** ($C_{pk} = 0.77$).
+                                <strong>Step 5 (Market Benchmark):</strong> SecuTech compares its lock against Competitor A &amp; B. Competitor B leads on mobile sync speed.
                             </div>
                             <div class="guide-step">
-                                <strong>Step 5 (Scatter):</strong> Conveyor speed is plotted against Peak temperature, revealing a strong negative correlation ($r = -0.98$) between conveyor speed and thermal joints.
-                            </div>
-                            <div class="guide-step">
-                                <strong>Step 6 (Control Chart):</strong> Tracking hourly oven peak temperatures reveals that the process is out of control at hour 9 and hour 19 due to external electrical loading fluctuations.
-                            </div>
-                            <div class="guide-step">
-                                <strong>Step 7 (Flowchart):</strong> The process map identifies hand-soldering assembly (Station 2) as generating 75.6% of solder fractures.
+                                <strong>Step 6 (Technical Targets):</strong> Design target direction is set (e.g. minimize standby current to &lt; 0.05 mA).
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Welcome / Diagnoser Section -->
+                <!-- Step 0: Welcome Mode Selector -->
                 <section id="sec-welcome" class="display-section active">
                     <div class="section-hero">
-                        <h2>Lean Diagnostic &amp; Quality Toolkit</h2>
-                        <p>A practitioner's utility to quantify quality costs, isolate process vulnerabilities, and select targeted Lean interventions based on operational symptoms.</p>
+                        <h2>Quality Function Deployment (QFD) Suite</h2>
+                        <p>A tool to convert qualitative customer needs into quantitative engineering specifications and design benchmarks.</p>
                     </div>
 
-                    <!-- Workspace Mode Selector (Default Case vs. Custom Data) -->
-                    <div class="card" style="margin-bottom: 25px; border-left: 5px solid var(--accent); background: linear-gradient(135deg, rgba(30,136,229,0.03), rgba(0,121,107,0.03));">
+                    <div class="card mode-card">
                         <h3><i class="fa-solid fa-folder-open"></i> Select Workspace Mode</h3>
-                        <div class="card-body" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 10px 0;">
-                            <div class="mode-option-box" style="border: 2px dashed var(--primary-light); padding: 15px; border-radius: 8px; text-align: center; transition: all 0.3s;" id="mode-load-default-box">
-                                <i class="fa-solid fa-book-open" style="font-size: 2.2rem; color: var(--accent); margin-bottom: 10px;"></i>
-                                <h4 style="margin: 5px 0; font-family: 'Outfit', sans-serif;">Load Default Case Study</h4>
-                                <p class="help-text" style="font-size: 12px; margin-bottom: 15px;">Apex Electro-Tech IoT Smart Hub defects case. Automatically populates all steps with tutorial data.</p>
+                        <div class="card-body mode-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 20px 0;">
+                            <div class="mode-option-box" id="mode-load-default-box" style="border: 2px dashed var(--primary-light); padding: 25px 20px; border-radius: 8px; text-align: center; transition: all 0.3s;">
+                                <i class="fa-solid fa-book-open" style="font-size: 2.6rem; color: var(--accent); margin: 15px 0 20px;"></i>
+                                <h4 style="margin: 10px 0; font-family: 'Outfit', sans-serif;">Load Default Case Study</h4>
+                                <p class="help-text" style="font-size: 13px; margin: 10px 0 24px; line-height: 1.5; color: var(--text-secondary);">SecuTech Smart IoT Lock parameters. Automatically fills out the entire matrix.</p>
                                 <button class="btn btn-secondary btn-sm" id="welcome-load-default-btn" style="width: 100%;">Use Default Case</button>
                             </div>
-                            <div class="mode-option-box" style="border: 2px dashed var(--border); padding: 15px; border-radius: 8px; text-align: center; transition: all 0.3s;" id="mode-clear-custom-box">
-                                <i class="fa-solid fa-file-signature" style="font-size: 2.2rem; color: var(--primary); margin-bottom: 10px;"></i>
-                                <h4 style="margin: 5px 0; font-family: 'Outfit', sans-serif;">Clear &amp; Enter My Own Data</h4>
-                                <p class="help-text" style="font-size: 12px; margin-bottom: 15px;">Clear all fields and begin a clean operational quality study with your own process parameters.</p>
+                            <div class="mode-option-box" id="mode-clear-custom-box" style="border: 2px dashed var(--border); padding: 25px 20px; border-radius: 8px; text-align: center; transition: all 0.3s;">
+                                <i class="fa-solid fa-file-signature" style="font-size: 2.6rem; color: var(--primary); margin: 15px 0 20px;"></i>
+                                <h4 style="margin: 10px 0; font-family: 'Outfit', sans-serif;">Clear &amp; Enter My Own Data</h4>
+                                <p class="help-text" style="font-size: 13px; margin: 10px 0 24px; line-height: 1.5; color: var(--text-secondary);">Flushes the active workspace parameters so you can enter your custom specifications.</p>
                                 <button class="btn btn-primary btn-sm" id="welcome-clear-custom-btn" style="width: 100%;">Enter My Data</button>
                             </div>
                         </div>
                     </div>
 
-                    <div class="grid grid-2col">
-                        <div class="card card-selector">
-                            <div class="card-header-highlight">
-                                <h3><i class="fa-solid fa-stethoscope"></i> Step 0: Diagnose the Symptom First</h3>
-                            </div>
-                            <div class="card-body">
-                                <label for="symptom-select" class="form-label">Select the primary symptom observed in your process: <i class="fa-solid fa-circle-info info-btn" data-info="symptom"></i></label>
-                                <select id="symptom-select" class="form-control">
-                                    <option value="" disabled selected>-- Choose process symptom --</option>
-                                    <option value="defects">High rework / defect rate (Defects)</option>
-                                    <option value="output">Output below demand (Low Output / Bottleneck)</option>
-                                    <option value="leadtime">Long lead time / queue-driven delays (Long Wait)</option>
-                                    <option value="changeover">Long machine changeover time (Changeover)</option>
-                                    <option value="wip">High Work-In-Progress (WIP) / excess inventory</option>
-                                    <option value="motion">Excessive motion / material transport waste</option>
-                                    <option value="skills">Skills underutilised / single-point-of-failure (Talent Gap)</option>
-                                    <option value="oee">Low equipment utilization / frequent breakdowns (OEE Deficit)</option>
-                                    <option value="scrap">Material scrap / high yield losses (Overprocessing)</option>
-                                    <option value="design">Product design mismatch with process limits (Design Gap)</option>
-                                    <option value="infosilose">Delayed information sharing (Information silos)</option>
-                                    <option value="visuals">Lack of visual controls / visual signals (No visual management)</option>
-                                    <option value="scheduling">Production scheduling mismatch (Push-based scheduling)</option>
-                                    <option value="planning">Planning mismatch / capacity planning issues</option>
-                                    <option value="absenteeism">High operator absenteeism / staffing disruptions</option>
-                                    <option value="workdist">Non-uniform work distribution (Unequal work allocation)</option>
-                                    <option value="skillgap">Lack of skilled workforce / untrained staff</option>
-                                    <option value="downtime">Unpredictable machine downtime / breakdowns</option>
-                                </select>
-
-                                <div id="diagnosis-result" class="diagnosis-box hidden">
-                                    <h4 id="diag-title">Diagnosis &amp; Recommendation <i class="fa-solid fa-circle-info info-btn" id="symptom-detail-info-btn" data-info="" style="cursor: pointer; margin-left: 8px; font-size: 1.1rem; color: var(--accent);"></i></h4>
-                                    <div class="diag-layout">
-                                        <div class="diag-col">
-                                            <h5><i class="fa-solid fa-magnifying-glass-chart"></i> 1. Diagnostic Step</h5>
-                                            <p id="diag-step-1"></p>
-                                        </div>
-                                        <div class="diag-col">
-                                            <h5><i class="fa-solid fa-gears"></i> 2. Lean Intervention</h5>
-                                            <p id="diag-step-2"></p>
-                                        </div>
-                                        <div class="diag-col">
-                                            <h5><i class="fa-solid fa-award"></i> 3. Advanced Level</h5>
-                                            <p id="diag-step-3"></p>
-                                        </div>
-                                    </div>
-                                    <div class="diag-case-study">
-                                        <strong><i class="fa-solid fa-landmark"></i> Real Case Analogy:</strong> <span id="diag-case-text"></span>
-                                    </div>
-                                    <div class="diag-btn-container">
-                                        <button id="start-sequence-btn" class="btn btn-primary">
-                                            Start 7 QC Tools sequence <i class="fa-solid fa-arrow-right"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                    <div class="grid grid-2col" style="margin-top: 25px;">
                         <div class="card">
-                            <h3><i class="fa-solid fa-scale-unbalanced"></i> Cost of Poor Quality (COPQ) Calculator</h3>
+                            <h3><i class="fa-solid fa-circle-question"></i> What is House of Quality?</h3>
                             <div class="card-body">
-                                <div class="form-row-2col">
-                                    <div class="form-group">
-                                        <label for="copq-revenue" class="form-label">Annual Revenue (₹ Cr) <i class="fa-solid fa-circle-info info-btn" data-info="revenue"></i></label>
-                                        <input type="number" id="copq-revenue" class="form-control" value="100" min="1">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="copq-prevention" class="form-label">Prevention Costs (₹ Cr) <i class="fa-solid fa-circle-info info-btn" data-info="prevention"></i></label>
-                                        <input type="number" id="copq-prevention" class="form-control" value="0.8" step="0.1" min="0">
-                                    </div>
-                                </div>
-                                <div class="form-row-2col">
-                                    <div class="form-group">
-                                        <label for="copq-appraisal" class="form-label">Appraisal Costs (₹ Cr) <i class="fa-solid fa-circle-info info-btn" data-info="appraisal"></i></label>
-                                        <input type="number" id="copq-appraisal" class="form-control" value="2.5" step="0.1" min="0">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="copq-internal" class="form-label">Internal Failure (₹ Cr) <i class="fa-solid fa-circle-info info-btn" data-info="internal"></i></label>
-                                        <input type="number" id="copq-internal" class="form-control" value="6.8" step="0.1" min="0">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="copq-external" class="form-label">External Failure (Visible Costs) (₹ Cr) <i class="fa-solid fa-circle-info info-btn" data-info="external"></i></label>
-                                    <input type="number" id="copq-external" class="form-control" value="4.2" step="0.1" min="0">
-                                </div>
-                                <button id="calculate-copq-btn" class="btn btn-secondary btn-sm" style="width: 100%;">
-                                    <i class="fa-solid fa-arrows-spin"></i> Calculate COPQ &amp; Draw Iceberg
-                                </button>
+                                <p>The House of Quality is the core matrix of **Quality Function Deployment (QFD)**. Developed in Japan by Yoji Akao in 1966, it acts as a conceptual map linking customer voices (WHATs) directly to manufacturing and engineering parameters (HOWs).</p>
+                                <p>By resolving conflicts (the Roof), analyzing competitors, and scoring priorities, designers can focus resources on design specs that maximize customer satisfaction.</p>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- COPQ Results and Iceberg Visual -->
-                    <div class="card hidden" id="copq-results-card" style="margin-top: 25px;">
-                        <h3>COPQ Analysis &amp; Iceberg Breakdown</h3>
-                        <div class="card-body grid grid-2col">
-                            <div class="copq-stats-container">
-                                <div class="metric-grid">
-                                    <div class="metric-tile">
-                                        <span class="metric-label">Total COPQ</span>
-                                        <span class="metric-value" id="copq-total-val">₹0.0 Cr</span>
-                                    </div>
-                                    <div class="metric-tile">
-                                        <span class="metric-label">% of Revenue</span>
-                                        <span class="metric-value" id="copq-percent-val">0.0%</span>
-                                    </div>
-                                </div>
-                                <div class="copq-breakdown-details" style="margin-top: 15px;">
-                                    <p><strong>Appraisal vs Prevention ratio:</strong> <span id="copq-ratio-val">0.0</span> (Target: &lt; 1.5). Investing more in Prevention will disproportionately reduce Failure costs.</p>
-                                </div>
-                            </div>
-                            <div class="iceberg-visual-wrapper">
-                                <svg id="copq-iceberg-svg" viewBox="0 0 500 350" width="100%" height="300px">
-                                    <defs>
-                                        <!-- Gradients -->
-                                        <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                            <stop offset="0%" stop-color="#E0F7FA" />
-                                            <stop offset="100%" stop-color="#80DEEA" />
-                                        </linearGradient>
-                                        <linearGradient id="waterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                            <stop offset="0%" stop-color="#0288D1" stop-opacity="0.9" />
-                                            <stop offset="100%" stop-color="#01579B" stop-opacity="0.95" />
-                                        </linearGradient>
-                                        <linearGradient id="iceTipGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" stop-color="#FFFFFF" />
-                                            <stop offset="100%" stop-color="#E0F2F1" />
-                                        </linearGradient>
-                                        <linearGradient id="iceBodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                            <stop offset="0%" stop-color="#80DEEA" stop-opacity="0.75" />
-                                            <stop offset="100%" stop-color="#006064" stop-opacity="0.85" />
-                                        </linearGradient>
-                                    </defs>
-                                    
-                                    <!-- Background Sky -->
-                                    <rect x="0" y="0" width="500" height="140" fill="url(#skyGrad)" />
-                                    
-                                    <!-- Background Water -->
-                                    <rect x="0" y="140" width="500" height="210" fill="url(#waterGrad)" />
-                                    
-                                    <!-- Iceberg Peak (Above Water) -->
-                                    <polygon points="250,30 200,90 150,140 350,140 300,80" fill="url(#iceTipGrad)" stroke="#B2DFDB" stroke-width="1.5" />
-                                    <!-- Iceberg Highlights -->
-                                    <polyline points="250,30 240,85 260,140" stroke="#E0F2F1" stroke-width="2" fill="none" opacity="0.6" />
-                                    
-                                    <!-- Iceberg Submerged Body (Below Water) -->
-                                    <polygon points="150,140 120,200 160,260 250,320 340,270 380,190 350,140" fill="url(#iceBodyGrad)" stroke="#00ACC1" stroke-width="2" />
-                                    
-                                    <!-- Waterline Wave -->
-                                    <path d="M 0,140 Q 125,135 250,140 T 500,140 L 500,145 L 0,145 Z" fill="#01579B" opacity="0.4" />
-                                    <line x1="0" y1="140" x2="500" y2="140" stroke="#004D40" stroke-width="2.5" />
-                                    
-                                    <!-- Text Labels -->
-                                    <!-- Above Water: Visible Costs -->
-                                    <rect x="10" y="25" width="160" height="50" rx="5" fill="#FFEBEE" stroke="#C62828" stroke-width="1.5" />
-                                    <text x="90" y="44" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#C62828">VISIBLE COPQ (Tip)</text>
-                                    <text x="90" y="62" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="13" font-weight="800" fill="#B71C1C" id="svg-visible-val">₹4.2 Cr</text>
-                                    <path d="M 170,50 L 210,65" stroke="#C62828" stroke-width="1.5" stroke-dasharray="3,3" />
-                                    
-                                    <!-- Below Water: Hidden Losses -->
-                                    <rect x="310" y="250" width="180" height="65" rx="5" fill="#E0F7FA" stroke="#006064" stroke-width="1.5" />
-                                    <text x="400" y="268" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#006064">HIDDEN COSTS (Body)</text>
-                                    <text x="400" y="284" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="11" font-weight="500" fill="#006064" style="letter-spacing:0.3px;">Internal + Appraisal + Prev</text>
-                                    <text x="400" y="303" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="14" font-weight="800" fill="#006064" id="svg-hidden-val">₹10.1 Cr</text>
-                                    <path d="M 310,282 L 270,250" stroke="#006064" stroke-width="1.5" stroke-dasharray="3,3" />
-                                    
-                                    <!-- Level Labels on graphics -->
-                                    <text x="250" y="130" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#37474F" opacity="0.8">External Failure</text>
-                                    <text x="250" y="180" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" opacity="0.9">Internal Failure</text>
-                                    <text x="250" y="225" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" opacity="0.9">Appraisal Costs</text>
-                                    <text x="250" y="270" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" opacity="0.9">Prevention Costs</text>
-                                </svg>
+                        <div class="card">
+                            <h3><i class="fa-solid fa-chart-line"></i> Priority Formulas</h3>
+                            <div class="card-body math-container">
+                                <p><strong>Engineering Absolute Importance Score:</strong></p>
+                                <div id="math-abs-formula">\[W_{abs, j} = \sum_{i=1}^{n} (R_{i,j} \times I_i)\]</div>
+                                <p>Where \(R_{i,j}\) is relationship weight (9, 3, 1) and \(I_i\) is customer importance (1–5).</p>
+                                <p><strong>Relative Engineering Weight (%):</strong></p>
+                                <div id="math-rel-formula">\[W_{rel, j} = \frac{W_{abs, j}}{\sum_{k} W_{abs, k}} \times 100\%\]</div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Step 1: Check Sheet Section -->
-                <section id="sec-step1" class="display-section">
-                    <div class="section-title">
-                        <h2>Step 1: Check Sheet</h2>
-                        <span class="badge badge-blue">Tally &amp; Log</span>
-                    </div>
-                    <blockquote class="course-quote">
-                        <strong>Check Sheet Rule:</strong> Define the process steps (stations) and failure categories before starting the logs to establish stratification metrics at the point of occurrence.
-                    </blockquote>
-
-                    <!-- Customizable check sheet configurations -->
-                    <div class="card" style="margin-bottom: 20px;">
-                        <h3><i class="fa-solid fa-sliders"></i> Check Sheet Configurations</h3>
+                <!-- Step 1: Customer Needs (WHATs) -->
+                <section id="sec-1" class="display-section">
+                    <div class="card">
+                        <div class="card-header-highlight">
+                            <h3><i class="fa-solid fa-comments"></i> Step 1: Customer Requirements &amp; Importance <i class="fa-solid fa-circle-info info-btn" style="color: var(--primary); cursor: pointer; margin-left: 8px;" onclick="showQfdInfo('step1')"></i></h3>
+                        </div>
                         <div class="card-body">
-                            <div class="form-group">
-                                <label for="checksheet-periods" class="form-label">Process Stations (comma separated columns) <i class="fa-solid fa-circle-info info-btn" data-info="periods"></i></label>
-                                <input type="text" id="checksheet-periods" class="form-control" value="Station 1: Reflow Paste, Station 2: Solder Assembly, Station 3: Avionics Testing, Station 4: Final Inspection">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-2col">
-                        <div class="card">
-                            <h3><i class="fa-solid fa-table"></i> Define Defect Categories</h3>
-                            <div class="card-body">
-                                <p class="help-text">Define the defect types your operators will tally. You can add new rows or modify names.</p>
-                                <table id="checksheet-categories-table" class="data-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Category Name <i class="fa-solid fa-circle-info info-btn" data-info="defect-categories"></i></th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- Dynamically generated rows -->
-                                    </tbody>
-                                </table>
-                                <button id="add-category-btn" class="btn btn-secondary btn-sm" style="margin-top: 10px;">
-                                    <i class="fa-solid fa-plus"></i> Add Defect Type
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <h3><i class="fa-solid fa-calendar-days"></i> Data Tally Form</h3>
-                            <div class="card-body">
-                                <p class="help-text">Input tally counts for each defect type across periods.</p>
-                                <div class="table-responsive">
-                                    <table id="tally-input-table" class="data-table">
-                                        <thead>
-                                            <!-- Dynamically generated headers -->
-                                        </thead>
-                                        <tbody>
-                                            <!-- Dynamically generated counts inputs -->
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="btn-group" style="margin-top: 15px;">
-                                    <button id="calculate-checksheet-btn" class="btn btn-primary">
-                                        <i class="fa-solid fa-calculator"></i> Compile Check Sheet
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card card-summary hidden" id="checksheet-result-card">
-                        <h3>Check Sheet Summary</h3>
-                        <div class="card-body">
-                            <table id="checksheet-summary-table" class="data-table select-table">
+                            <p class="section-desc">List what the customer expects from the product. Rate each from 1 (lowest) to 5 (highest importance).</p>
+                            <table class="qfd-edit-table" id="whats-table">
                                 <thead>
                                     <tr>
-                                        <th>Defect Type</th>
-                                        <th>Total Count</th>
-                                        <th>Defect Rate (%)</th>
+                                        <th style="width: 70%;">Customer Requirement (WHAT)</th>
+                                        <th style="width: 20%; text-align: center;">Importance (1.0 - 5.0) <i class="fa-solid fa-circle-info" style="color: var(--primary); cursor: pointer;" onclick="showQfdFieldInfo('importance')"></i></th>
+                                        <th style="width: 10%; text-align: center;">Action</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <!-- Populated on calculation -->
+                                <tbody id="whats-tbody">
+                                    <!-- Dynamic rows -->
                                 </tbody>
                             </table>
-                            <div class="nav-next-container">
-                                <button class="btn btn-success go-to-step-btn" data-target="2">
-                                    Proceed to Step 2: Pareto Chart <i class="fa-solid fa-arrow-right"></i>
-                                </button>
-                            </div>
+                            <button id="add-what-btn" class="btn btn-secondary btn-sm" style="margin-top: 15px;">
+                                <i class="fa-solid fa-plus"></i> Add Customer Requirement
+                            </button>
                         </div>
                     </div>
                 </section>
 
-                <!-- Step 2: Pareto Chart Section -->
-                <section id="sec-step2" class="display-section">
-                    <div class="section-title">
-                        <h2>Step 2: Pareto Chart</h2>
-                        <span class="badge badge-purple">Prioritise Vital Few</span>
-                    </div>
-                    <blockquote class="course-quote">
-                        <strong>Pareto Principle:</strong> Separate the vital few from the trivial many. Quantify the cumulative impacts to focus operational focus.
-                    </blockquote>
-
-                    <div class="grid grid-2col-heavy-left">
-                        <div class="card">
-                            <h3><i class="fa-solid fa-chart-bar"></i> Cumulative Defect Analysis</h3>
-                            <div class="card-body">
-                                <div class="chart-container">
-                                    <canvas id="pareto-chart"></canvas>
-                                </div>
-                            </div>
+                <!-- Step 2: Technical/Design Specs (HOWs) -->
+                <section id="sec-2" class="display-section">
+                    <div class="card">
+                        <div class="card-header-highlight">
+                            <h3><i class="fa-solid fa-gears"></i> Step 2: Technical Design Characteristics <i class="fa-solid fa-circle-info info-btn" style="color: var(--primary); cursor: pointer; margin-left: 8px;" onclick="showQfdInfo('step2')"></i></h3>
                         </div>
-
-                        <div class="card">
-                            <h3><i class="fa-solid fa-list-check"></i> Pareto Priorities</h3>
-                            <div class="card-body">
-                                <table id="pareto-table" class="data-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Rank</th>
-                                            <th>Defect Type</th>
-                                            <th>Count</th>
-                                            <th>%</th>
-                                            <th>Cum %</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- Dynamically generated rows -->
-                                    </tbody>
-                                </table>
-
-                                <div class="pareto-verdict">
-                                    <h4><i class="fa-solid fa-circle-exclamation"></i> Vital Few Analysis</h4>
-                                    <p id="pareto-verdict-text">Calculate to prioritize.</p>
-                                </div>
-                                <div class="practitioner-knowledge-box" id="pareto-knowledge">
-                                    <!-- Populated dynamically -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="nav-next-container">
-                        <button class="btn btn-success go-to-step-btn" data-target="3">
-                            Proceed to Step 3: Fishbone &amp; 5-Why <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </section>
-
-                <!-- Step 3: Fishbone & 5-Why Section -->
-                <section id="sec-step3" class="display-section">
-                    <div class="section-title">
-                        <h2>Step 3: Fishbone &amp; 5-Why Diagram</h2>
-                        <span class="badge badge-red">Diagnose Root Causes</span>
-                    </div>
-                    <blockquote class="course-quote">
-                        <strong>Ishikawa Guideline:</strong> Ensure representation across all 6M categories to counter confirmation bias or process preconceptions.
-                    </blockquote>
-
-                    <div class="card fishbone-viz-card">
-                        <h3><i class="fa-solid fa-fish"></i> Visual Ishikawa 6M Model</h3>
-                        <div class="card-body" style="overflow-x: auto;">
-                            <div class="fishbone-container" style="min-width: 750px;">
-                                <!-- Responsive Interactive SVG Fishbone -->
-                                <svg id="fishbone-svg" viewBox="0 0 1000 500" width="100%" height="100%">
-                                    <!-- Spine -->
-                                    <line x1="50" y1="250" x2="800" y2="250" class="fishbone-spine" />
-                                    <!-- Head Arrow -->
-                                    <polygon points="800,230 840,250 800,270" class="fishbone-head-poly" />
-                                    <rect x="840" y="210" width="150" height="80" rx="5" class="fishbone-head-box" />
-                                    <text x="915" y="245" class="fishbone-head-text" id="fishbone-effect-text" text-anchor="middle">Effect</text>
-                                    <text x="915" y="265" class="fishbone-head-sub" id="fishbone-effect-sub" text-anchor="middle">(#1 Pareto Defect)</text>
-
-                                    <!-- Man Bone (Top Left) -->
-                                    <line x1="200" y1="250" x2="320" y2="60" class="fishbone-bone" />
-                                    <text x="320" y="50" class="fishbone-label" text-anchor="middle">Man (People)</text>
-                                    <g id="svg-causes-man"></g>
-
-                                    <!-- Machine Bone (Top Middle) -->
-                                    <line x1="420" y1="250" x2="540" y2="60" class="fishbone-bone" />
-                                    <text x="540" y="50" class="fishbone-label" text-anchor="middle">Machine (Equipment)</text>
-                                    <g id="svg-causes-machine"></g>
-
-                                    <!-- Method Bone (Top Right) -->
-                                    <line x1="640" y1="250" x2="760" y2="60" class="fishbone-bone" />
-                                    <text x="760" y="50" class="fishbone-label" text-anchor="middle">Method (Process)</text>
-                                    <g id="svg-causes-method"></g>
-
-                                    <!-- Material Bone (Bottom Left) -->
-                                    <line x1="200" y1="250" x2="320" y2="440" class="fishbone-bone" />
-                                    <text x="320" y="460" class="fishbone-label" text-anchor="middle">Material (Inputs)</text>
-                                    <g id="svg-causes-material"></g>
-
-                                    <!-- Measurement Bone (Bottom Middle) -->
-                                    <line x1="420" y1="250" x2="540" y2="440" class="fishbone-bone" />
-                                    <text x="540" y="460" class="fishbone-label" text-anchor="middle">Measurement</text>
-                                    <g id="svg-causes-measurement"></g>
-
-                                    <!-- Mother Nature Bone (Bottom Right) -->
-                                    <line x1="640" y1="250" x2="760" y2="440" class="fishbone-bone" />
-                                    <text x="760" y="460" class="fishbone-label" text-anchor="middle">Mother Nature (Env)</text>
-                                    <g id="svg-causes-environment"></g>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-2col">
-                        <div class="card">
-                            <h3><i class="fa-solid fa-plus"></i> Add Causes to 6M Categories</h3>
-                            <div class="card-body">
-                                <div class="form-group-inline">
-                                    <div class="form-group" style="margin-bottom: 0;">
-                                        <label for="cause-category" class="form-label">Category <i class="fa-solid fa-circle-info info-btn" data-info="fishbone-category"></i></label>
-                                        <select id="cause-category" class="form-control select-inline">
-                                            <option value="man">Man (People)</option>
-                                            <option value="machine">Machine (Equipment)</option>
-                                            <option value="method">Method (Process)</option>
-                                            <option value="material">Material (Inputs)</option>
-                                            <option value="measurement">Measurement</option>
-                                            <option value="environment">Mother Nature (Environment)</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group" style="margin-bottom: 0; flex: 1;">
-                                        <label for="cause-text" class="form-label">Cause Description <i class="fa-solid fa-circle-info info-btn" data-info="fishbone-cause"></i></label>
-                                        <input type="text" id="cause-text" class="form-control input-inline" placeholder="e.g. Crimping tool worn out">
-                                    </div>
-                                    <button id="add-cause-btn" class="btn btn-primary" style="align-self: flex-end; height: 42px;"><i class="fa-solid fa-plus"></i> Add</button>
-                                </div>
-                                <p class="help-text" style="margin-top: 10px;">Select a category and input a potential cause, then look at the list below to perform a 5-Why analysis on it.</p>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <h3><i class="fa-solid fa-question"></i> 5-Why Drill-Down Tool</h3>
-                            <div class="card-body">
-                                <label for="cause-select-5why" class="form-label">Select a cause to analyze: <i class="fa-solid fa-circle-info info-btn" data-info="five-why"></i></label>
-                                <select id="cause-select-5why" class="form-control">
-                                    <option value="" disabled selected>-- Choose a cause --</option>
-                                </select>
-
-                                <div id="container-5why" class="hidden" style="margin-top: 15px;">
-                                    <div class="why-row"><strong>Problem:</strong> <span id="why-cause-name"></span></div>
-                                    <div class="why-row"><span class="why-label">Why 1:</span> <input type="text" id="why1" class="form-control form-control-sm" placeholder="Why does this happen?"></div>
-                                    <div class="why-row"><span class="why-label">Why 2:</span> <input type="text" id="why2" class="form-control form-control-sm" placeholder="Why?"></div>
-                                    <div class="why-row"><span class="why-label">Why 3:</span> <input type="text" id="why3" class="form-control form-control-sm" placeholder="Why?"></div>
-                                    <div class="why-row"><span class="why-label">Why 4:</span> <input type="text" id="why4" class="form-control form-control-sm" placeholder="Why?"></div>
-                                    <div class="why-row"><span class="why-label">Why 5 (Root Cause):</span> <input type="text" id="why5" class="form-control form-control-sm" placeholder="Identify the ultimate root cause"></div>
-                                    <button id="save-5why-btn" class="btn btn-primary btn-sm" style="margin-top: 10px;"><i class="fa-solid fa-floppy-disk"></i> Save Root Cause</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card card-summary" id="fishbone-summary-card">
-                        <h3>Confirmed Causes &amp; 5-Why Root Diagnoses</h3>
                         <div class="card-body">
-                            <table id="root-causes-table" class="data-table">
+                            <p class="section-desc">Define how the company can address customer needs. These should be measurable engineering metrics.</p>
+                            <table class="qfd-edit-table" id="hows-table">
                                 <thead>
                                     <tr>
-                                        <th>Category</th>
-                                        <th>Brainstormed Cause</th>
-                                        <th>Ultimate Root Cause (5-Why)</th>
-                                        <th>Action</th>
+                                        <th style="width: 50%;">Design Characteristic (HOW)</th>
+                                        <th style="width: 25%; text-align: center;">Unit</th>
+                                        <th style="width: 15%; text-align: center;">Direction</th>
+                                        <th style="width: 10%; text-align: center;">Action</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td colspan="4" class="text-center">No root causes added yet. Use the fields above to brainstorm and drill down.</td>
-                                    </tr>
+                                <tbody id="hows-tbody">
+                                    <!-- Dynamic rows -->
                                 </tbody>
                             </table>
+                            <button id="add-how-btn" class="btn btn-secondary btn-sm" style="margin-top: 15px;">
+                                <i class="fa-solid fa-plus"></i> Add Design Characteristic
+                            </button>
                         </div>
-                    </div>
-
-                    <div class="practitioner-knowledge-box" id="fivewhy-knowledge">
-                        <!-- Populated dynamically -->
-                    </div>
-
-                    <div class="nav-next-container">
-                        <button class="btn btn-success go-to-step-btn" data-target="4">
-                            Proceed to Step 4: Histogram (Capability) <i class="fa-solid fa-arrow-right"></i>
-                        </button>
                     </div>
                 </section>
 
-                <!-- Step 4: Histogram (Process Capability) Section -->
-                <section id="sec-step4" class="display-section">
-                    <div class="section-title">
-                        <h2>Step 4: Histogram &amp; Process Capability Analysis</h2>
-                        <span class="badge badge-teal">Cp &amp; Cpk Math</span>
-                    </div>
-                    <blockquote class="course-quote">
-                        <strong>Capability Assessment:</strong> Use histograms to evaluate process distribution skewness, centering, and spread. Standard capability threshold is set at $C_{pk} \ge 1.33$.
-                    </blockquote>
-
-                    <!-- Flexible inputs for histogram -->
-                    <div class="card" style="margin-bottom: 20px;">
-                        <h3><i class="fa-solid fa-sliders"></i> Variable Configurations</h3>
-                        <div class="card-body form-row-2col">
-                            <div class="form-group">
-                                <label for="capability-var-name" class="form-label">Variable Monitored <i class="fa-solid fa-circle-info info-btn" data-info="cap-var"></i></label>
-                                <input type="text" id="capability-var-name" class="form-control" value="Reflow Peak Temperature">
-                            </div>
-                            <div class="form-group">
-                                <label for="capability-station-select" class="form-label">Monitored Process Station <i class="fa-solid fa-circle-info info-btn" data-info="cap-station"></i></label>
-                                <select id="capability-station-select" class="form-control">
-                                    <!-- Populated dynamically from Step 1 -->
-                                </select>
+                <!-- Step 3: Relationship Coefficients -->
+                <section id="sec-3" class="display-section">
+                    <div class="card">
+                        <div class="card-header-highlight">
+                            <h3><i class="fa-solid fa-table-cells"></i> Step 3: Inter-Relationship Matrix <i class="fa-solid fa-circle-info info-btn" style="color: var(--primary); cursor: pointer; margin-left: 8px;" onclick="showQfdInfo('step3')"></i></h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="section-desc">Quantify how strongly each Technical Spec (HOW) impacts each Customer Need (WHAT). Select (9) for Strong, (3) for Medium, (1) for Weak, or blank for None.</p>
+                            <div class="table-scroll-container">
+                                <table class="matrix-grid-table" id="relationship-grid">
+                                    <!-- Populated by JS -->
+                                </table>
                             </div>
                         </div>
-                        <div class="card-body form-row-2col" style="padding-top: 0;">
-                            <div class="form-group" style="margin-bottom: 0;">
-                                <label for="capability-var-unit" class="form-label">Unit of Measure <i class="fa-solid fa-circle-info info-btn" data-info="cap-unit"></i></label>
-                                <input type="text" id="capability-var-unit" class="form-control" value="°C">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-2col-heavy-left">
-                        <div class="card">
-                            <h3><i class="fa-solid fa-chart-simple"></i> Capability Distribution Histogram</h3>
-                            <div class="card-body">
-                                <div class="chart-container">
-                                    <canvas id="histogram-chart"></canvas>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <h3><i class="fa-solid fa-calculator"></i> Parameters &amp; Calculations</h3>
-                            <div class="card-body">
-                                <div class="form-row-2col">
-                                    <div class="form-group">
-                                        <label for="lsl-input" class="form-label">LSL (Lower Spec) <i class="fa-solid fa-circle-info info-btn" data-info="lsl"></i></label>
-                                        <input type="number" id="lsl-input" class="form-control" value="235" step="0.1">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="usl-input" class="form-label">USL (Upper Spec) <i class="fa-solid fa-circle-info info-btn" data-info="usl"></i></label>
-                                        <input type="number" id="usl-input" class="form-control" value="245" step="0.1">
-                                    </div>
-                                </div>
-                                <div class="form-group" style="margin-top: 10px;">
-                                    <label for="capability-data-input" class="form-label">Continuous Measurements (comma separated): <i class="fa-solid fa-circle-info info-btn" data-info="cap-data"></i></label>
-                                    <textarea id="capability-data-input" class="form-control" rows="6" placeholder="e.g. 238, 240, 237..."></textarea>
-                                </div>
-                                <button id="calculate-capability-btn" class="btn btn-primary" style="margin-top: 10px;">
-                                    <i class="fa-solid fa-calculator"></i> Calculate Cp &amp; Cpk
-                                </button>
-
-                                <div class="capability-results-box hidden" id="capability-results">
-                                    <h4>Calculated Metrics</h4>
-                                    <div class="metric-grid">
-                                        <div class="metric-tile">
-                                            <span class="metric-label">Mean (\(\mu\))</span>
-                                            <span class="metric-value" id="cap-mean">--</span>
-                                        </div>
-                                        <div class="metric-tile">
-                                            <span class="metric-label">Std Dev (\(\sigma\))</span>
-                                            <span class="metric-value" id="cap-sd">--</span>
-                                        </div>
-                                        <div class="metric-tile">
-                                            <span class="metric-label">\(C_p\)</span>
-                                            <span class="metric-value" id="cap-cp">--</span>
-                                        </div>
-                                        <div class="metric-tile">
-                                            <span class="metric-label">\(C_{pk}\)</span>
-                                            <span class="metric-value" id="cap-cpk">--</span>
-                                        </div>
-                                    </div>
-                                    <div class="capability-verdict" id="cap-verdict-box">
-                                        <strong>Verdict:</strong> <span id="cap-verdict-text"></span>
-                                    </div>
-                                    <div class="practitioner-knowledge-box" id="capability-knowledge">
-                                        <!-- Populated dynamically -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="nav-next-container">
-                        <button class="btn btn-success go-to-step-btn" data-target="5">
-                            Proceed to Step 5: Scatter Diagram <i class="fa-solid fa-arrow-right"></i>
-                        </button>
                     </div>
                 </section>
 
-                <!-- Step 5: Scatter Diagram Section -->
-                <section id="sec-step5" class="display-section">
-                    <div class="section-title">
-                        <h2>Step 5: Scatter Diagram</h2>
-                        <span class="badge badge-blue">Correlation Analysis</span>
-                    </div>
-                    <blockquote class="course-quote">
-                        <strong>Correlation Analysis:</strong> Leverage bivariate data mapping to investigate process dependencies and verify root-cause hypotheses before designing engineering interventions.
-                    </blockquote>
-
-                    <!-- Custom axes labels for scatter -->
-                    <div class="card" style="margin-bottom: 20px;">
-                        <h3><i class="fa-solid fa-sliders"></i> Scatter Axis Configurations</h3>
-                        <div class="card-body form-row-2col">
-                            <div class="form-group">
-                                <label for="scatter-x-label" class="form-label">X-Axis Variable &amp; Unit <i class="fa-solid fa-circle-info info-btn" data-info="scatter-x"></i></label>
-                                <input type="text" id="scatter-x-label" class="form-control" value="Conveyor Speed (m/min)">
-                            </div>
-                            <div class="form-group">
-                                <label for="scatter-y-label" class="form-label">Y-Axis Variable &amp; Unit <i class="fa-solid fa-circle-info info-btn" data-info="scatter-y"></i></label>
-                                <input type="text" id="scatter-y-label" class="form-control" value="Peak Joint Temp (°C)">
-                            </div>
+                <!-- Step 4: Correlation Roof -->
+                <section id="sec-4" class="display-section">
+                    <div class="card">
+                        <div class="card-header-highlight">
+                            <h3><i class="fa-solid fa-triangle-exclamation"></i> Step 4: Engineering Spec Correlations (The Roof) <i class="fa-solid fa-circle-info info-btn" style="color: var(--primary); cursor: pointer; margin-left: 8px;" onclick="showQfdInfo('step4')"></i></h3>
                         </div>
-                    </div>
-
-                    <div class="grid grid-2col-heavy-left">
-                        <div class="card">
-                            <h3><i class="fa-solid fa-chart-line"></i> Bivariate Correlation Plot</h3>
-                            <div class="card-body">
-                                <div class="chart-container">
-                                    <canvas id="scatter-chart"></canvas>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <h3><i class="fa-solid fa-keyboard"></i> Input Paired Data (X, Y)</h3>
-                            <div class="card-body">
-                                <p class="help-text">Input values formatted as: <code>X_value, Y_value</code> (one pair per line).</p>
-                                <div class="form-group">
-                                    <label for="scatter-data-input" class="form-label">Paired Data (X, Y) <i class="fa-solid fa-circle-info info-btn" data-info="scatter-data"></i></label>
-                                    <textarea id="scatter-data-input" class="form-control" rows="8" placeholder="e.g.&#10;1.2, 242&#10;1.5, 239&#10;1.8, 236"></textarea>
-                                </div>
-                                <button id="calculate-scatter-btn" class="btn btn-primary" style="margin-top: 10px;">
-                                    <i class="fa-solid fa-bolt"></i> Plot &amp; Calculate Correlation
-                                </button>
-
-                                <div class="correlation-results-box hidden" id="scatter-results">
-                                    <h4>Analysis Result</h4>
-                                    <div class="correlation-stat">
-                                        <span>Pearson Correlation (\(r\)):</span>
-                                        <strong id="scatter-r-val">--</strong>
-                                    </div>
-                                    <div class="correlation-verdict" id="scatter-verdict-box">
-                                        <strong>Strength:</strong> <span id="scatter-verdict-text">--</span>
-                                    </div>
-                                    <div class="practitioner-knowledge-box" id="scatter-knowledge">
-                                        <!-- Populated dynamically -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="nav-next-container">
-                        <button class="btn btn-success go-to-step-btn" data-target="6">
-                            Proceed to Step 6: SPC Control Chart <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </section>
-
-                <!-- Step 6: SPC Control Chart Section -->
-                <section id="sec-step6" class="display-section">
-                    <div class="section-title">
-                        <h2>Step 6: SPC Control Chart</h2>
-                        <span class="badge badge-orange">Process Stability</span>
-                    </div>
-                    <blockquote class="course-quote">
-                        <strong>Statistical Process Control:</strong> Control limits represent internal process capability. Compare actual runs with standard $\pm3\sigma$ thresholds to detect out-of-control conditions.
-                    </blockquote>
-
-                    <!-- Flexible parameters for control chart -->
-                    <div class="card" style="margin-bottom: 20px;">
-                        <h3><i class="fa-solid fa-sliders"></i> Control Chart Settings</h3>
-                        <div class="card-body form-row-2col">
-                            <div class="form-group">
-                                <label for="control-var-name" class="form-label">Parameter Monitored <i class="fa-solid fa-circle-info info-btn" data-info="ctrl-var"></i></label>
-                                <input type="text" id="control-var-name" class="form-control" value="Peak Joint Temp">
-                            </div>
-                            <div class="form-group">
-                                <label for="control-station-select" class="form-label">Monitored Process Station <i class="fa-solid fa-circle-info info-btn" data-info="ctrl-station"></i></label>
-                                <select id="control-station-select" class="form-control">
-                                    <!-- Populated dynamically from Step 1 -->
-                                </select>
-                            </div>
-                        </div>
-                        <div class="card-body form-row-2col" style="padding-top: 0;">
-                            <div class="form-group" style="margin-bottom: 0;">
-                                <label for="control-var-unit" class="form-label">Unit of Measure <i class="fa-solid fa-circle-info info-btn" data-info="ctrl-unit"></i></label>
-                                <input type="text" id="control-var-unit" class="form-control" value="°C">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-2col-heavy-left">
-                        <div class="card">
-                            <h3><i class="fa-solid fa-chart-line"></i> Process Control Chart (X / Run Chart)</h3>
-                            <div class="card-body">
-                                <div class="chart-container">
-                                    <canvas id="control-chart"></canvas>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <h3><i class="fa-solid fa-sliders"></i> Control Limits Settings</h3>
-                            <div class="card-body">
-                                <p class="help-text">Input time-series measurements (one value per line) to calculate Mean, UCL, and LCL.</p>
-                                <div class="form-group">
-                                    <label for="control-data-input" class="form-label">Measurements List: <i class="fa-solid fa-circle-info info-btn" data-info="ctrl-data"></i></label>
-                                    <textarea id="control-data-input" class="form-control" rows="8" placeholder="e.g. 238, 239, 241..."></textarea>
-                                </div>
-                                <button id="calculate-control-btn" class="btn btn-primary" style="margin-top: 10px;">
-                                    <i class="fa-solid fa-chart-line"></i> Calculate Control Limits
-                                </button>
-
-                                <div class="control-results-box hidden" id="control-results">
-                                    <h4>Statistical Limits</h4>
-                                    <div class="limits-list">
-                                        <div class="limit-row"><span>Upper Control Limit (UCL):</span> <strong id="ctrl-ucl">--</strong></div>
-                                        <div class="limit-row"><span>Process Mean (\(\bar{X}\)):</span> <strong id="ctrl-mean">--</strong></div>
-                                        <div class="limit-row"><span>Lower Control Limit (LCL):</span> <strong id="ctrl-lcl">--</strong></div>
-                                    </div>
-                                    <div class="stability-verdict" id="ctrl-verdict-box">
-                                        <strong>Stability Status:</strong> <span id="ctrl-verdict-text">--</span>
-                                    </div>
-                                    <div class="practitioner-knowledge-box" id="control-knowledge">
-                                        <!-- Populated dynamically -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="nav-next-container">
-                        <button class="btn btn-success go-to-step-btn" data-target="7">
-                            Proceed to Step 7: Flowchart &amp; Stratification <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </section>
-
-                <!-- Step 7: Flowchart & Stratification Section -->
-                <section id="sec-step7" class="display-section">
-                    <div class="section-title">
-                        <h2>Step 7: Flowchart &amp; Stratification Mapping</h2>
-                        <span class="badge badge-teal">Locate Defect Birthplace</span>
-                    </div>
-                    <blockquote class="course-quote">
-                        <strong>Stratification Principle:</strong> Sub-divide aggregated error logs based on manufacturing cell stations, operator teams, or shifts to locate exactly where defects are generated.
-                    </blockquote>
-
-                    <div class="grid grid-2col-heavy-left">
-                        <div class="card">
-                            <h3><i class="fa-solid fa-diagram-project"></i> Interactive Process Flowchart</h3>
-                            <div class="card-body">
-                                <p class="help-text">Visualize the process steps and allocate where defects are generated.</p>
-                                <div class="flowchart-canvas" id="flowchart-container">
-                                    <!-- Flowchart items generated dynamically -->
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <h3><i class="fa-solid fa-bars-progress"></i> Defect Allocation by Station</h3>
-                            <div class="card-body">
-                                <p class="help-text">These ratios are calculated automatically from the Step 1 Check Sheet tallies.</p>
-                                <table id="stratification-table" class="data-table">
+                        <div class="card-body">
+                            <p class="section-desc">Map correlations between different Technical Specs (HOWs) to resolve design conflicts. If improving Spec A degrades Spec B, mark as Negative. If it aids, mark as Positive.</p>
+                            <div class="roof-editor-container">
+                                <table class="qfd-edit-table" id="roof-editor-table">
                                     <thead>
                                         <tr>
-                                            <th>Station Name <i class="fa-solid fa-circle-info info-btn" data-info="strat-stations"></i></th>
-                                            <th>Defects Born Here <i class="fa-solid fa-circle-info info-btn" data-info="strat-counts"></i></th>
-                                            <th>Percentage (%)</th>
+                                            <th>Design Spec A</th>
+                                            <th>Design Spec B</th>
+                                            <th style="text-align: center; width: 30%;">Correlation Impact</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <!-- Dynamic station rows generated on compilation -->
+                                    <tbody id="roof-editor-tbody">
+                                        <!-- Dynamic pairs -->
                                     </tbody>
                                 </table>
-
-                                <div class="flow-verdict hidden" id="strat-verdict-box" style="margin-top: 15px;">
-                                    <h4><i class="fa-solid fa-bullseye"></i> Defect Birthplace Diagnostic</h4>
-                                    <p id="strat-verdict-text">Defect birthplace analysis</p>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Step 8: RAG Decision Engine & Knowledge Base -->
-                <section id="sec-kb" class="display-section">
-                    <div class="section-title">
-                        <h2>Step 8: Lean &amp; Quality Decision Engine</h2>
-                        <span class="badge badge-teal">RAG Knowledge Base &amp; Actionable Advice</span>
-                    </div>
-                    <blockquote class="course-quote">
-                        <strong>Strategic Alignment:</strong> Convert statistical signals into shopfloor action. This engine uses theoretical principles from Deming, Juran, Montgomery, and Liker to synthesize qualitative recommendations based on your current workspace measurements.
-                    </blockquote>
-
-                    <div class="grid grid-2col" style="grid-template-columns: 1fr 1.8fr; gap: 20px;">
-                        <!-- Left Panel: Interactive Tool Explorer -->
-                        <div class="card">
-                            <h3><i class="fa-solid fa-graduation-cap"></i> Select Quality Tool</h3>
-                            <div class="card-body">
-                                <p class="help-text">Click on any tool to load its theoretical foundations and qualitative decision-making model:</p>
-                                <div class="kb-selector-grid" style="display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 15px;">
-                                    <button class="btn btn-secondary kb-tool-btn active" data-tool="copq" style="text-align: left; justify-content: flex-start; padding: 12px 15px;"><i class="fa-solid fa-scale-unbalanced" style="margin-right: 10px;"></i> Cost of Poor Quality (COPQ)</button>
-                                    <button class="btn btn-secondary kb-tool-btn" data-tool="checksheet" style="text-align: left; justify-content: flex-start; padding: 12px 15px;"><i class="fa-solid fa-table-list" style="margin-right: 10px;"></i> Check Sheet (Tally &amp; Log)</button>
-                                    <button class="btn btn-secondary kb-tool-btn" data-tool="pareto" style="text-align: left; justify-content: flex-start; padding: 12px 15px;"><i class="fa-solid fa-chart-bar" style="margin-right: 10px;"></i> Pareto Analysis (80/20 Rule)</button>
-                                    <button class="btn btn-secondary kb-tool-btn" data-tool="fishbone" style="text-align: left; justify-content: flex-start; padding: 12px 15px;"><i class="fa-solid fa-network-wired" style="margin-right: 10px;"></i> Ishikawa &amp; 5-Why (Root-Cause)</button>
-                                    <button class="btn btn-secondary kb-tool-btn" data-tool="capability" style="text-align: left; justify-content: flex-start; padding: 12px 15px;"><i class="fa-solid fa-chart-simple" style="margin-right: 10px;"></i> Capability Studies (Cp/Cpk)</button>
-                                    <button class="btn btn-secondary kb-tool-btn" data-tool="scatter" style="text-align: left; justify-content: flex-start; padding: 12px 15px;"><i class="fa-solid fa-chart-line" style="margin-right: 10px;"></i> Scatter Correlation (r-Value)</button>
-                                    <button class="btn btn-secondary kb-tool-btn" data-tool="control" style="text-align: left; justify-content: flex-start; padding: 12px 15px;"><i class="fa-solid fa-chart-area" style="margin-right: 10px;"></i> SPC Control Charts (Limits)</button>
-                                </div>
-
-                                <div style="margin-top: 25px; border-top: 1px solid var(--border); padding-top: 15px;">
-                                    <button id="kb-load-workspace-btn" class="btn btn-success" style="width: 100%;"><i class="fa-solid fa-rotate"></i> Load Active Session Data</button>
-                                    <p class="help-text" style="font-size: 11px; margin-top: 5px; text-align: center;">Syncs the simulator with values from Step 0 to 7 automatically.</p>
-                                </div>
+                <!-- Step 5: Market Benchmarking -->
+                <section id="sec-5" class="display-section">
+                    <div class="card">
+                        <div class="card-header-highlight">
+                            <h3><i class="fa-solid fa-chart-bar"></i> Step 5: Market Performance Benchmarking <i class="fa-solid fa-circle-info info-btn" style="color: var(--primary); cursor: pointer; margin-left: 8px;" onclick="showQfdInfo('step5')"></i></h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="section-desc">Rate customer perception of performance (1–5 Scale) for your company and core competitors on each Customer Requirement.</p>
+                            <div class="table-scroll-container">
+                                <table class="matrix-grid-table" id="benchmark-grid">
+                                    <!-- Populated by JS -->
+                                </table>
                             </div>
                         </div>
+                    </div>
+                </section>
 
-                        <!-- Right Panel: Knowledge Base Content & Simulator -->
-                        <div class="grid grid-1col" style="gap: 20px;">
-                            <!-- Tab Content: Theory & Background -->
-                            <div class="card">
-                                <h3 id="kb-title"><i class="fa-solid fa-book-open"></i> Cost of Poor Quality (COPQ) Foundation</h3>
-                                <div class="card-body">
-                                    <div class="kb-content-section" id="kb-theory-container">
-                                        <!-- Populated dynamically -->
-                                    </div>
-                                </div>
+                <!-- Step 6: Technical Targets -->
+                <section id="sec-6" class="display-section">
+                    <div class="card">
+                        <div class="card-header-highlight">
+                            <h3><i class="fa-solid fa-bullseye"></i> Step 6: Engineering Targets &amp; Competitor Tech Benchmark <i class="fa-solid fa-circle-info info-btn" style="color: var(--primary); cursor: pointer; margin-left: 8px;" onclick="showQfdInfo('step6')"></i></h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="section-desc">Establish target values and list competitors' technical scores for each engineering specification.</p>
+                            <div class="table-scroll-container">
+                                <table class="matrix-grid-table" id="tech-targets-grid">
+                                    <!-- Populated by JS -->
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Step 7: Master Visual House of Quality -->
+                <section id="sec-matrix-view" class="display-section">
+                    <div class="card text-center" style="max-width: 100%; overflow-x: auto;">
+                        <div class="card-header-highlight">
+                            <h3><i class="fa-solid fa-hotel"></i> Synthesized House of Quality <i class="fa-solid fa-circle-info info-btn" style="color: var(--primary); cursor: pointer; margin-left: 8px;" onclick="showQfdInfo('step7')"></i></h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="section-desc">Calculated priorities, competitor rankings, and technical targets consolidated into the master HoQ diagram.</p>
+                            
+                            <!-- Master QFD Visual Container -->
+                            <div id="hoq-visual-wrapper" class="hoq-visual-wrapper">
+                                <!-- Generated Dynamically by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Step 8: QFD Decision Advisor (RAG KB) -->
+                <section id="sec-advisor" class="display-section">
+                    <div class="card">
+                        <div class="card-header-highlight">
+                            <h3><i class="fa-solid fa-brain"></i> Lean Quality &amp; QFD Decision Advisor</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="section-desc">Load active values from the House of Quality workspace to synthesize strategic recommendations, trade-off solutions, and expert literature guidance.</p>
+                            
+                            <div class="grid grid-2col" style="margin-bottom: 20px;">
+                                <button id="advisor-sync-btn" class="btn btn-secondary btn-block">
+                                    <i class="fa-solid fa-arrows-rotate"></i> Load Active QFD Workspace Data
+                                </button>
+                                <button id="advisor-synthesize-btn" class="btn btn-primary btn-block">
+                                    <i class="fa-solid fa-lightbulb"></i> Synthesize Recommendations
+                                </button>
                             </div>
 
-                            <!-- Interactive Simulator & Qualitative Advisor -->
-                            <div class="card">
-                                <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Qualitative Advisor Simulator</h3>
-                                <div class="card-body">
-                                    <div id="kb-simulator-inputs-container">
-                                        <!-- Inputs populated dynamically depending on selected tool -->
-                                    </div>
-                                    <button id="kb-simulate-btn" class="btn btn-primary" style="margin-top: 15px; width: 100%;"><i class="fa-solid fa-gears"></i> Synthesize Recommendations</button>
+                            <div class="advisor-output-box hidden" id="advisor-results">
+                                <div class="alert alert-info" id="advisor-status">
+                                    <i class="fa-solid fa-microchip"></i> Analyzing matrix data with Quality Engineering Rules (Akao &amp; Kano modules loaded)...
+                                </div>
 
-                                    <!-- Simulator Output Results -->
-                                    <div class="diagnosis-box hidden" id="kb-simulator-output-box" style="margin-top: 20px; border-left: 5px solid var(--accent);">
-                                        <h4><i class="fa-solid fa-award"></i> RAG Qualitative Assessment Report</h4>
-                                        <div id="kb-simulator-output-text">
-                                            <!-- Results populated dynamically -->
-                                        </div>
+                                <div class="advisor-section">
+                                    <h4><i class="fa-solid fa-triangle-exclamation"></i> Critical Trade-off Hotspots</h4>
+                                    <p class="help-text">Engineering specifications that are in conflict but both require high priorities.</p>
+                                    <div class="advice-block" id="advice-conflicts">
+                                        <!-- Computed content -->
                                     </div>
+                                </div>
+
+                                <div class="advisor-section">
+                                    <h4><i class="fa-solid fa-arrows-down-to-target"></i> Benchmarking Priority Gaps</h4>
+                                    <p class="help-text">Areas where customer importance is high, but competitor performance exceeds ours.</p>
+                                    <div class="advice-block" id="advice-benchmarks">
+                                        <!-- Computed content -->
+                                    </div>
+                                </div>
+
+                                <div class="advisor-section">
+                                    <h4><i class="fa-solid fa-graduation-cap"></i> Theoretical Alignment Guidelines</h4>
+                                    <p class="help-text">Relevant concepts from design-for-excellence methodology.</p>
+                                    <div class="advice-block" id="advice-theory">
+                                        <!-- Computed content -->
+                                    </div>
+                                </div>
+
+                                <div class="advisor-section">
+                                    <h4><i class="fa-solid fa-circle-check"></i> Action Checklist</h4>
+                                    <p class="help-text">Steps for the product development team.</p>
+                                    <ul class="checklist-ul" id="advice-checklist">
+                                        <!-- Computed content -->
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -1006,22 +397,23 @@
                 </section>
             </main>
         </div>
-
-
     </div>
 
-    <!-- Guidance Contextual Modal -->
-    <div id="info-modal" class="info-modal-overlay hidden">
-        <div class="info-modal-content">
-            <div class="info-modal-header">
-                <h3 id="info-modal-title">Variable Guide</h3>
-                <button id="info-modal-close" class="modal-close-btn">&times;</button>
+    <!-- Info Detail Modal -->
+    <div class="modal-overlay hidden" id="info-modal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 id="modal-title">Info Guidelines</h3>
+                <span class="close-modal-btn" onclick="closeModal()">&times;</span>
             </div>
-            <div class="info-modal-body" id="info-modal-body">
-                <!-- Populated dynamically -->
+            <div class="modal-body" id="modal-body">
+                <!-- Modal content -->
             </div>
         </div>
     </div>
+
+    <!-- Hidden Container for Practitioner Manual PDF compile -->
+    <div id="manual-template-container" class="hidden-pdf-template"></div>
 
     <script src="app.js"></script>
 </body>
